@@ -1,0 +1,4 @@
+api:
+  bcp:
+    base-url: https://api.bcp.com.pe/v1
+    tipo-cambio-endpoint: /exchange-rates
