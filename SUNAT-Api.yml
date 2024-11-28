@@ -1,4 +1,4 @@
 api:
   sunat:
     base-url: https://api.apis.net.pe/v1
-    ruc-endpoint: /ruc
+    token: DEV_KHF55CV7TPpXYFDzHeCSI63DNWLhZrSsoN49IvEu7qj5wSFq4aypyYtq8h47BZwR # Aquí colocas tu token
