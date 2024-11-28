@@ -1,0 +1,4 @@
+api:
+  sunat:
+    base-url: https://api.apis.net.pe/v1
+    ruc-endpoint: /ruc
