@@ -1,0 +1,4 @@
+api:
+  interbank:
+    base-url: https://api.interbank.com.pe/v1
+    tipo-cambio-endpoint: /exchange
