@@ -1,3 +1,6 @@
+server:
+  port: 9094
+
 api:
   sunat:
     base-url: https://api.apis.net.pe/v2/sunat
