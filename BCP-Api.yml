@@ -1,4 +1,4 @@
-# Configuración general del servicio
+# Configuración general de la aplicación
 server:
   port: 9003
   address: 0.0.0.0
@@ -8,41 +8,42 @@ server:
 # Configuración de la API de BCP
 bcp-api:
   base-url: https://api.bcp.com.pe  # URL base de la API de BCP
-  api-key: YOUR_BCP_API_KEY  # Clave API proporcionada por BCP
-  client-id: YOUR_CLIENT_ID  # Identificador del cliente (si lo necesitas)
-  client-secret: YOUR_CLIENT_SECRET  # Secreto del cliente (si lo necesitas)
+  api-key: YOUR_BCP_API_KEY  # Sustituir con tu clave de API proporcionada por BCP
+  client-id: YOUR_CLIENT_ID  # Identificador del cliente (si es necesario)
+  client-secret: YOUR_CLIENT_SECRET  # Secreto del cliente (si es necesario)
 
   # Configuración de los endpoints específicos de la API de BCP
   endpoints:
     pagos: /v1/pagos  # Endpoint para procesar pagos
     transacciones: /v1/transacciones  # Endpoint para consultar transacciones
 
-# Logging de la aplicación
-logging:
-  level:
-    root: INFO
-    org.springframework.web.client: DEBUG  # Para ver detalles de las peticiones HTTP
-
 # Configuración de RestTemplate para las solicitudes HTTP a la API de BCP
 spring:
   main:
-    web-application-type: none  # Usado para servicios sin servidor web (por ejemplo, solo API)
+    web-application-type: none  # Usado para servicios sin servidor web (solo API)
   rest:
     template:
       connect-timeout: 5000  # Tiempo máximo de espera para conectar con la API de BCP
       read-timeout: 5000  # Tiempo máximo para leer la respuesta de la API de BCP
 
-# Perfil para el entorno de desarrollo
+# Logging de la aplicación
+logging:
+  level:
+    root: INFO
+    org.springframework.web.client: DEBUG  # Para ver detalles de las peticiones HTTP
+  loggers:
+    org.springframework.web: DEBUG  # Habilitar logs para solicitudes HTTP
+    org.springframework.web.client.RestTemplate: DEBUG  # Para verificar las respuestas de RestTemplate
+
+# Configuración para entornos específicos
 spring:
   profiles:
-    active: dev
+    active: dev  # Activar el perfil de desarrollo
 
----
 # Configuración para el entorno de producción
+---
 spring:
   profiles: prod
   bcp-api:
     base-url: https://api.bcp.com.pe  # URL base de la API de BCP en producción
-    api-key: PROD_API_KEY  # Clave API de producción
-
-
+    api-key: PROD_API_KEY  # Sustituir con la clave API de producción
