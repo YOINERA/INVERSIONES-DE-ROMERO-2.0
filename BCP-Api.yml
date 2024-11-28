@@ -1,4 +1,48 @@
-api:
-  bcp:
-    base-url: https://api.bcp.com.pe/v1
-    tipo-cambio-endpoint: /exchange-rates
+# Configuración general del servicio
+server:
+  port: 9003
+  address: 0.0.0.0
+  servlet:
+    context-path: /api
+
+# Configuración de la API de BCP
+bcp-api:
+  base-url: https://api.bcp.com.pe  # URL base de la API de BCP
+  api-key: YOUR_BCP_API_KEY  # Clave API proporcionada por BCP
+  client-id: YOUR_CLIENT_ID  # Identificador del cliente (si lo necesitas)
+  client-secret: YOUR_CLIENT_SECRET  # Secreto del cliente (si lo necesitas)
+
+  # Configuración de los endpoints específicos de la API de BCP
+  endpoints:
+    pagos: /v1/pagos  # Endpoint para procesar pagos
+    transacciones: /v1/transacciones  # Endpoint para consultar transacciones
+
+# Logging de la aplicación
+logging:
+  level:
+    root: INFO
+    org.springframework.web.client: DEBUG  # Para ver detalles de las peticiones HTTP
+
+# Configuración de RestTemplate para las solicitudes HTTP a la API de BCP
+spring:
+  main:
+    web-application-type: none  # Usado para servicios sin servidor web (por ejemplo, solo API)
+  rest:
+    template:
+      connect-timeout: 5000  # Tiempo máximo de espera para conectar con la API de BCP
+      read-timeout: 5000  # Tiempo máximo para leer la respuesta de la API de BCP
+
+# Perfil para el entorno de desarrollo
+spring:
+  profiles:
+    active: dev
+
+---
+# Configuración para el entorno de producción
+spring:
+  profiles: prod
+  bcp-api:
+    base-url: https://api.bcp.com.pe  # URL base de la API de BCP en producción
+    api-key: PROD_API_KEY  # Clave API de producción
+
+
