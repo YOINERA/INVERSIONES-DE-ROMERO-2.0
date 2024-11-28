@@ -1,4 +1,4 @@
 api:
   sunat:
-    base-url: https://api.apis.net.pe/v1
-    token: DEV_KHF55CV7TPpXYFDzHeCSI63DNWLhZrSsoN49IvEu7qj5wSFq4aypyYtq8h47BZwR # Aquí colocas tu token
+    base-url: https://api.apis.net.pe/v2/sunat
+    token: apis-token-11883.WqaDygNAYLfrLIzJ7fxJ07YafF9yv297 # Coloca tu token válido aquí
