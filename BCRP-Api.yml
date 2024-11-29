@@ -1,4 +1,0 @@
-api:
-  bcrp:
-    base-url: https://api.apis.net.pe/v1
-    tipo-cambio-endpoint: /tipo-cambio-sunat
