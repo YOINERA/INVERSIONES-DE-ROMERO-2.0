@@ -2,11 +2,6 @@ server:
   port: 9002
 
 api:
-  bcp:
-    gateway-v2:
-      base-url: https://dev.bpcbt.com/api2/
-      token: 9t8P31nqypACB9Tr98MdfV2WgWsEefykw # Token para autenticación
-    payment:
-      base-url: https://dev.bpcbt.com/payment
-      login: alayoyoiner-api         # Login para autenticación básica
-      password: oyisz-N4            # Password para autenticación básica
+  sunat:
+    base-url: https://dev.bpcbt.com/v1/apigate/ws/rest
+    token: YWxheW95b2luZXI6b3lpc3otTjQ=
