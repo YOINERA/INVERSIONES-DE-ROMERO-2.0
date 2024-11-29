@@ -4,5 +4,5 @@ server:
 api:
   bcp:
     gateway-v2:
-      base-url: https://dev.bpcbt.com/v2/api/bcp/
+      base-url: https://dev.bpcbt.com/v2
       token: YWxheW95b2luZXI6b3lpc3otTjQ=  # Token para autenticación
