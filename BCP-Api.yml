@@ -2,6 +2,7 @@ server:
   port: 9002
 
 api:
-  sunat:
-    base-url: https://dev.bpcbt.com/v1/apigate/ws/rest
-    token: YWxheW95b2luZXI6b3lpc3otTjQ=
+  bcp:
+    gateway-v2:
+      base-url: https://dev.bpcbt.com/v2/api/bcp/
+      token: YWxheW95b2luZXI6b3lpc3otTjQ=  # Token para autenticación
