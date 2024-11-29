@@ -3,6 +3,18 @@ server:
 
 api:
   bcp:
+    # Configuración para la API v1
+    sunat:
+      base-url: https://dev.bpcbt.com/v1/apigate/ws/rest
+      token: YWxheW95b2luZXI6b3lpc3otTjQ=  # Token simbólico
+
+    # Configuración para la API v2 (prueba alfa)
     gateway-v2:
       base-url: https://dev.bpcbt.com/v2
-      token: YWxheW95b2luZXI6b3lpc3otTjQ=  # Token para autenticación
+      token: YWxheW95b2luZXI6b3lpc3otTjQ=  # Token simbólico
+      visa-bin: 416363  # VISA BIN
+      contenedor-mc: 516353  # Contenedor MC
+      id-institucion: 6156  # Identificación de la institución
+      id-servicio: 70003409  # Identificación del servicio
+      id-producto: 70003617  # Identificación del producto
+
