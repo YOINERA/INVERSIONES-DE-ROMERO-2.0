@@ -1,0 +1,23 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: Identity
+        uri: http://localhost:9094
+        predicates:
+        - Path=/auth/**
+      - id: Transporte
+        uri: http://localhost:9091
+        predicates:
+        - Path=/transporte/**
+      - id: Molino
+        uri: http://localhost:9092
+        predicates:
+        - Path=/molino/**
+      - id: SUNAT
+        uri: http://localhost:9001
+        predicates:
+        - Path=/api/sunat/**
