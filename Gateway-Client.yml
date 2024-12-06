@@ -4,28 +4,36 @@ server:
 spring:
   cloud:
     gateway:
+      default-filters:
+        - name: AuthenticationFilter
       routes:
-      - id: Identity
-        uri: http://localhost:9094
-        predicates:
-        - Path=/auth/**
-        filters:
-        - AuthenticationFilter
-      - id: Transporte
-        uri: http://localhost:9091
-        predicates:
-        - Path=/transporte/**
-        filters:
-        - AuthenticationFilter
-      - id: Molino
-        uri: http://localhost:9092
-        predicates:
-        - Path=/molino/**
-        filters:
-        - AuthenticationFilter
-      - id: SUNAT
-        uri: http://localhost:9001
-        predicates:
-        - Path=/api/sunat/**
-        filters:
-        - AuthenticationFilter
+        - id: Identity
+          uri: http://localhost:9094
+          predicates:
+            - Path=/auth/**
+        - id: Transporte
+          uri: http://localhost:9091
+          predicates:
+            - Path=/transporte/**
+        - id: Molino
+          uri: http://localhost:9092
+          predicates:
+            - Path=/molino/**
+        - id: SUNAT
+          uri: http://localhost:9001
+          predicates:
+            - Path=/api/sunat/**
+
+role-route-mapping:
+  mappings:
+    - path: /auth/**
+      roles:
+        - ADMIN
+    - path: /transporte/**
+      roles:
+        - TRANSPORTE
+        - ADMIN
+    - path: /molino/**
+      roles:
+        - MOLINO
+        - ADMIN
