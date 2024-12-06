@@ -24,16 +24,3 @@ spring:
           predicates:
             - Path=/api/sunat/**
 
-role-route-mapping:
-  mappings:
-    - path: /auth/**
-      roles:
-        - ADMIN
-    - path: /transporte/**
-      roles:
-        - TRANSPORTE
-        - ADMIN
-    - path: /molino/**
-      roles:
-        - MOLINO
-        - ADMIN
