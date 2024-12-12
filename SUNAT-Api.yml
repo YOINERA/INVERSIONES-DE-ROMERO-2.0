@@ -8,15 +8,13 @@ api:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Actualizado a la versión correcta
     url: jdbc:mysql://localhost:3306/bdromero
     username: root
     password: mysql
   jpa:
-    properties:
-      dialect: org.hibernate.dialect.MySQL5Dialect
-      hibernate:
-        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # Usar MySQL8Dialect para versiones modernas
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: update  # Generación automática de las tablas
+      format_sql: true  # Formato legible para las consultas SQL
+    show-sql: true  # Mostrar las consultas SQL en la consola
