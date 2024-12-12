@@ -5,3 +5,18 @@ api:
   sunat:
     base-url: https://api.apis.net.pe/v2/sunat
     token: apis-token-11883.WqaDygNAYLfrLIzJ7fxJ07YafF9yv297 # Coloca tu token válido aquí
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bdromero
+    username: root
+    password: mysql
+  jpa:
+    properties:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
