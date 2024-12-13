@@ -3,15 +3,16 @@ server:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bdromero
+    driver-class-name: com.mysql.cj.jdbc.Driver # Corrección del driver
+    url: jdbc:mysql://localhost:3306/bdromero?useSSL=false&serverTimezone=UTC # Añadido `useSSL=false&serverTimezone=UTC`
     username: root
     password: mysql
+    
   jpa:
-    properties:
-      dialect: org.hibernate.dialect.MySQL5Dialect
-      hibernate:
-        format_sql: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect # Usa MySQL8Dialect si estás usando MySQL 8 o superior
+        format_sql: true
     show-sql: true
